@@ -9,13 +9,10 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
-        if(IsWinner == false)
+        if(!IsWinner && Score >= 5)
         {
-            if (Score >= 5)
-            {
-                print("Výhra");
-                IsWinner = true;
-            }
+            print("Výhra");
+            IsWinner = true;
         }      
 
     }
