@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RedBall : MonoBehaviour
 {
+    public int Score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class RedBall : MonoBehaviour
         if(transform.position.y < -10f)
         {
             Destroy(gameObject);
+            Score++;
         }
+
     }
 }
