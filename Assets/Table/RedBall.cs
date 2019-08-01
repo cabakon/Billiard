@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class RedBall : MonoBehaviour
 {
-    public int Score;
-
+    public const int SCORE_VALUE = 1;
+    private GameMaster gm;
     // Start is called before the first frame update
     void Start()
     {
-        print("Ahoj ja jsem cervena koule");
+
+        GameObject gameObjectMaster = GameObject.Find("_GameManager");
+        if(gameObjectMaster != null )
+        {
+            gm = gameObjectMaster.GetComponent<GameMaster>();
+        }
     }
 
     // Update is called once per frame
@@ -17,8 +22,8 @@ public class RedBall : MonoBehaviour
     {
         if(transform.position.y < -10f)
         {
+            gm.Score += SCORE_VALUE;
             Destroy(gameObject);
-            Score++;
         }
 
     }
